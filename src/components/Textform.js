@@ -7,7 +7,7 @@ export default function Textform(props) {
      console.log("Uppercase was clicked" + text);
      let newText = text.toUpperCase();
      setText(newText)
-
+     props.showAlert("Converted to Upper Case!","success")
      let wordcount = text.length;
     
 
