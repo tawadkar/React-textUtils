@@ -5,6 +5,12 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   const [mode,setMode] = useState('light'); //Whether dark mode is enabled or not
@@ -19,7 +25,7 @@ function App() {
       showAlert("Dark Mode has been Enabled","success");
      // document.title = 'AITA - Dark Mode';
      /*setInterval(()=>{
-      document.title = 'Text Utils Amazinf Mode';
+      document.title = 'Text Utils Amazing Mode';
      },2000);
 
      setInterval(()=>{
@@ -55,15 +61,22 @@ function App() {
   }
   return (
     <>
-   
+    <Router>
     <Navbar title ="TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode}/> 
     <Alert alert={alert}/>
-
     <div className="container my-3">
-       <Textform showAlert={showAlert} heading="Enter Text to Analyze below" mode={mode} />
-       {/*<About></About>*/}
+    <Switch>
+      {/* ./users--->component 1
+      //users/home--->compenent 2*/}
+          <Route exact path="/about">
+            <About/>
+          </Route>
+          <Route exact path="/">
+            <Textform showAlert={showAlert} heading="Enter Text to Analyze below" mode={mode} />
+          </Route>
+    </Switch>
     </div>
-   
+    </Router>
    </>
     
   );
