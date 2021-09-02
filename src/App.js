@@ -5,12 +5,12 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
-import {
+/*import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
-} from "react-router-dom";
+} from "react-router-dom";*/
 
 function App() {
   const [mode,setMode] = useState('light'); //Whether dark mode is enabled or not
@@ -61,22 +61,22 @@ function App() {
   }
   return (
     <>
-    <Router>
+    {/*<Router>*/}
     <Navbar title ="TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode}/> 
     <Alert alert={alert}/>
     <div className="container my-3">
-    <Switch>
+   {/*<Switch>*/}
       {/* ./users--->component 1
       //users/home--->compenent 2*/}
-          <Route exact path="/about">
+         {/*<Route exact path="/about">
             <About/>
-          </Route>
-          <Route exact path="/">
+      </Route>*/}
+         {/*<Route exact path="/">*/}
             <Textform showAlert={showAlert} heading="Enter Text to Analyze below" mode={mode} />
-          </Route>
-    </Switch>
+         {/*</Route>*/}
+   {/*</Switch>*/}
     </div>
-    </Router>
+   {/*</Router>*/}
    </>
     
   );
