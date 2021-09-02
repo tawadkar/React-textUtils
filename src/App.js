@@ -17,12 +17,23 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor='#042743';
       showAlert("Dark Mode has been Enabled","success");
+     // document.title = 'AITA - Dark Mode';
+     /*setInterval(()=>{
+      document.title = 'Text Utils Amazinf Mode';
+     },2000);
+
+     setInterval(()=>{
+      document.title = 'Install TextUtils now';
+     },1500);*/
+
     }
     else{
 
       setMode('light');
       document.body.style.backgroundColor='white';
       showAlert("Light Mode has been Enabled","success");
+      //document.title = 'AITA - Light Mode';
+
     }
 
   }
