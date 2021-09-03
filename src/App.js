@@ -15,7 +15,7 @@ function App() {
   const [mode,setMode] = useState('light'); //Whether dark mode is enabled or not
   const [alert,setAlert] =  useState(null)
 
-  const removeBodyClasses=()=>{
+ /* const removeBodyClasses=()=>{
     document.body.classList.remove('bg-light')
     document.body.classList.remove('bg-dark')
     document.body.classList.remove('bg-success')
@@ -23,24 +23,16 @@ function App() {
     document.body.classList.remove('bg-primary')
     document.body.classList.remove('bg-danger')
 
-  }
+  }*/
 
-  const toggleMode =(cls) =>{
-    removeBodyClasses();
-    document.body.classList.add('bg-'+cls)
+  const toggleMode =() =>{
+   // removeBodyClasses();
+    //document.body.classList.add('bg-'+cls)
     if(mode ==='light'){
 
       setMode('dark');
       document.body.style.backgroundColor='#042743';
       showAlert("Dark Mode has been Enabled","success");
-     // document.title = 'AITA - Dark Mode';
-     /*setInterval(()=>{
-      document.title = 'Text Utils Amazing Mode';
-     },2000);
-
-     setInterval(()=>{
-      document.title = 'Install TextUtils now';
-     },1500);*/
 
     }
     else{

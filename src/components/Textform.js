@@ -8,7 +8,7 @@ export default function Textform(props) {
      let newText = text.toUpperCase();
      setText(newText)
      props.showAlert("Converted to Upper Case!","success")
-     let wordcount = text.length;
+     
     
 
    }
@@ -17,6 +17,7 @@ export default function Textform(props) {
     console.log("Lowercase was clicked" + text);
     let newText = text.toLowerCase();
     setText(newText)
+    props.showAlert("Converted to Lower Case!","success")
 
   }
 
@@ -24,12 +25,12 @@ export default function Textform(props) {
     console.log("Lowercase was clicked" + text);
     let newText = '';
     setText(newText)
+    props.showAlert("Text Cleared","success")
 
   }
   const handleCopyText=()=> {
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
+    props.showAlert("Text Copied","success")
 
   }
 
@@ -55,7 +56,7 @@ export default function Textform(props) {
     </div>
     <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
         <h2>Your Text Summary</h2>
-        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+        <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes Read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Nothing to Preview!"}</p>
